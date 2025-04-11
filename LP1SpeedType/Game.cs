@@ -156,7 +156,7 @@ namespace SpeedType
             {
                 if (gameStats[i] == null)
                 {
-                    table.AddRow((i + 1).ToString(), "-", "-", "-"); 
+                    table.AddRow((i + 1).ToString(), "|", "|", "|"); 
                 }
 
                 else
