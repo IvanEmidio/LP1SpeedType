@@ -87,7 +87,7 @@ namespace SpeedType
         private void StartGame()
         {
             // The sentence that will be presented to the player.
-            string sentence = sentenceProvider;
+            string sentence = new SentenceProvider().GetRandomSentence().Humanize();
 
             AnsiConsole.Clear();
             AnsiConsole.MarkupLine("[bold green]Type This Sentence:[/]");
@@ -174,5 +174,7 @@ namespace SpeedType
                 "Menu...[/]");
             Console.ReadLine();
         }
+
+        
     }
 }
