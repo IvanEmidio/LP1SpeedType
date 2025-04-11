@@ -113,11 +113,11 @@ namespace SpeedType
             // Shift existing entries
             for (int i = gameStats.Length - 1; i > 0; i--)
             {
-                // ////////// => TO IMPLEMENT <= //////////// //
+                gameStats[i] = gameStats[i - 1];
             }
 
             // Add new result at the beginning
-            gameStats[0] = // ////////// => TO IMPLEMENT <= //////////// //
+            gameStats[0] = new GameResult(wpm, accuracy, timeTaken);
 
             AnsiConsole.MarkupLine("\n[bold yellow]Results:[/]");
             AnsiConsole.MarkupLine($"[bold]Time Taken:[/] {timeTaken:F2} " +
@@ -162,7 +162,7 @@ namespace SpeedType
                 table.AddRow(
                     (i + 1).ToString(), 
                     gameStats[i].WPM.ToString(), 
-                    gameStats[i].Accuracy.ToString("P2"), 
+                    gameStats[i].Accuracy.ToString(), 
                     gameStats[i].TimeTaken.ToString());
                 }
             }
